@@ -7,21 +7,26 @@ DESCRIPTION GOES HERE
 Based on these projects, thank you all for sharing:
 
 https://tristam.ie/2023/758/
+
 For the fingerprint sensor:
-https://community.home-assistant.io/t/garage-fingerprint-sensor/312977
+- https://community.home-assistant.io/t/garage-fingerprint-sensor/312977
+
 For the response:
-https://github.com/ronschaeffer/video_doorbell_voice_response
+- https://github.com/ronschaeffer/video_doorbell_voice_response
+  
 For LED:
-https://www.makerguides.com/drive-power-leds-with-ld1500sb-esp32/ 
+- https://www.makerguides.com/drive-power-leds-with-ld1500sb-esp32/ 
 
-Wiring:
+# Parts Used:
 
+# Wiring:
+![alt text](https://github.com/tmsaavedra/ESPHOME_Doorbell/blob/main/wiring.png)
 
-Code:
+# Code:
 
   Automations YAML:
 
   ESP32 Code:
 
-Final:
+# Final:
 
