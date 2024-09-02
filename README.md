@@ -40,6 +40,7 @@ For the flash light:
 - LD1500SB Led Driver [Like this one](https://www.aliexpress.com/item/1005005884585581.html?spm=a2g0o.productlist.main.1.ae3dNCBMNCBM2d&algo_pvid=90c72317-c73d-4103-8c3e-eaeac9e074a8&algo_exp_id=90c72317-c73d-4103-8c3e-eaeac9e074a8-0&pdp_npi=4%40dis%21EUR%217.15%217.15%21%21%2154.81%2154.81%21%402103868a17235603818416488e0e7c%2112000034698374434%21sea%21PT%21855154709%21X&curPageLogUid=3P6EwUmtQ5VH&utparam-url=scene%3Asearch%7Cquery_from%3A)
 - High Power led bead [This one](https://www.aliexpress.com/item/1005006758358960.html?spm=a2g0o.order_list.order_list_main.15.25eccaa4atuoRo&gatewayAdapt=glo2bra)
 - 3D Printed case mount all the parts. [Check it here](https://github.com/tmsaavedra/ESPHOME_Doorbell/blob/main/Doorbell_new_ver%20v20.stl)
+- Momentary button with light. [Check it here](https://pt.aliexpress.com/item/1005004920346156.html?spm=a2g0o.order_list.order_list_main.23.5ae1caa4Fg3z16&gatewayAdapt=glo2bra)
 
 
 # Wiring:
