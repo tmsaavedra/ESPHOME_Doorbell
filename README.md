@@ -362,7 +362,102 @@ dfplayer:
       logger.log: 'Playback finished'
 
 ```
-Automations YAML:
+# Automations YAML:
 
-# Final:
+When someone presses the bell button:
+
+```yaml
+alias: BELL_RING_UNKNOWN
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - binary_sensor.espcam_ringbutton
+    to: "on"
+    from: "off"
+condition: []
+action:
+  - metadata: {}
+    data: {}
+    target:
+      entity_id: light.espcam_flash_light
+    action: light.turn_on
+  - delay: "00:00:01"
+  - metadata: {}
+    data:
+      filename: /config/www/snapshots/doorbell_{{ now().strftime('%Y%m%d_%H') }}.jpg
+    target:
+      device_id: cf7798438bb2122b1f22a893dda3de92
+    action: camera.snapshot
+  - delay: "00:00:01"
+  - metadata: {}
+    data:
+      title: Doorbell
+      message: Someone is at the door
+      data:
+        push:
+          sound:
+            name: default
+            critical: 1
+            volume: 1
+        image: >-
+          https://your.link:8443/local/snapshots/doorbell_{{
+          now().strftime('%Y%m%d_%H') }}.jpg
+        url: /lovelace/cam
+    action: notify.mobile_app_saavedras_iphone
+  - metadata: {}
+    data:
+      title: Doorbell
+      message: Someone is at the door
+      data:
+        push:
+          sound:
+            name: default
+            critical: 1
+            volume: 1
+        image: https://your.link:8443/local/doorbell.jpg
+        url: /lovelace/cam
+    action: notify.mobile_app_iphone
+  - delay: "00:00:01"
+  - data:
+      qos: "0"
+      retain: false
+      topic: wallpanel/mywallpanel/command
+      payload: "{\"wake\": true}"
+    action: mqtt.publish
+  - delay: "00:00:01"
+  - data:
+      dismissable: true
+      autoclose: false
+      title: Bell
+      size: normal
+      timeout: 60000
+      deviceIS:
+        - b569094c-d446e214
+      content:
+        camera_view: live
+        type: picture-glance
+        entities: []
+        camera_image: camera.espcam_esp_cam
+    action: browser_mod.popup
+mode: single
+```
+When one of the authorized persons unlock the door with the fingerprint:
+
+```yaml
+alias: BELL_RING_AUTORIZADO
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.espcam_fingerprint_state
+    to: Autorizado
+condition: []
+action:
+  - action: switch.toggle
+    target:
+      entity_id: switch.trincoportao
+    data: {}
+mode: single
+```
 
